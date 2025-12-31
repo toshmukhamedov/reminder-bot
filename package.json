@@ -9,7 +9,7 @@
     "copy-public": "cp -rv public dist/public/",
     "build": "pnpm run prebuild && tsc && pnpm run copy-public",
     "start": "TS_NODE_BASEURL=./dist node -r tsconfig-paths/register dist/server.js",
-    "start:dev": "tsc-watch --outDir ./dist --onSuccess 'pnpm start'",
+    "start:dev": "TS_NODE_BASEURL=./dist tsc-watch --outDir ./dist --onSuccess \"node --env-file-if-exists=.env -r tsconfig-paths/register dist/server.js\"",
     "format": "prettier --write ."
   },
   "author": "",
@@ -28,6 +28,7 @@
     "node-cron": "3.0.2",
     "node-schedule": "2.1.1",
     "pdf-parse": "1.1.1",
+    "socket.io-client": "4.8.3",
     "tsconfig-paths": "4.2.0",
     "zod": "3.22.2"
   },

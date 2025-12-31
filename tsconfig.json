@@ -38,5 +38,5 @@
     }
   },
   "exclude": ["node_modules", "dist"],
-  "include": ["./**/*.ts"]
+  "include": ["./**/*.ts", "config/storage.js", "config/database.js"]
 }
