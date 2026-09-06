@@ -178,7 +178,7 @@ if (env.WEBHOOK_ENABLED) {
   server.get('/health', async () => ({ status: 'ok' }))
   server.post(`/${env.TOKEN}`, webhookCallback(bot, 'fastify'))
   server.setErrorHandler(errorHandler)
-  server.listen({ port: env.WEBHOOK_PORT }, async () => {
+  server.listen({ host: "0.0.0.0", port: env.WEBHOOK_PORT }, async () => {
     await bot.api.setWebhook(env.WEBHOOK_URL + env.TOKEN)
 
     // Delete commands before setting new ones
