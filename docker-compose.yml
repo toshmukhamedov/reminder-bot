@@ -15,7 +15,7 @@ services:
     networks:
       - dokploy-network
     healthcheck:
-      test: ['CMD', 'curl', '-fsS', '--max-time', '4', 'http://localhost:8081/health']
+      test: ['CMD', 'curl', '-fsS', '--max-time', '4', 'http://localhost:8080/health']
       interval: 10s
       timeout: 5s
       retries: 6
